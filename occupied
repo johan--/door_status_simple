@@ -1,0 +1,4 @@
+require 'redis'
+redis = Redis.new
+redis.set('status', "occupied")
+redis.publish('status_update', "occupied")

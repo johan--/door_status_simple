@@ -1,0 +1,4 @@
+require 'redis'
+redis = Redis.new
+redis.set('status', "available")
+redis.publish('status_update', "available")

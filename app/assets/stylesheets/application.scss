@@ -1,0 +1,46 @@
+body {
+  background-color: #F8F8F8;
+}
+
+[data-status] {
+  border-radius: 5px;
+  width: 600px;
+  margin: 50px auto 0 auto;
+  color: #FFF;
+  text-align: center;
+  font-size: 90px;
+
+  .smaller {
+    padding: 4px 0;
+    color: #333;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #FFF;
+    display: block;
+    font-size: 20px;
+  }
+}
+
+[data-status=unknown] {
+  background-color: gray;
+  border: 2px solid gray;
+  &:after {
+    content: "UNKNOWN"
+  }
+}
+
+[data-status=occupied] {
+  background-color: red;
+  border: 2px solid red;
+  &:after {
+    content: "OCCUPIED"
+  }
+}
+
+[data-status=available] {
+  background-color: green;
+  border: 2px solid green;
+  &:after {
+    content: "AVAILABLE"
+  }
+}
