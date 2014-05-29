@@ -13,8 +13,11 @@ class PagesController < ApplicationController
     redis.subscribe('status_update') do |on|
       on.message do |event, data|
         if %w(available occupied).include? data
-          response.stream.write("data: #{data}\n\n")
+          data = { event: "status_update", status: data }
+        else
+          data = { event: "heartbeat" }
         end
+        response.stream.write("data: #{data.to_json}\n\n")
       end
     end
   rescue IOError

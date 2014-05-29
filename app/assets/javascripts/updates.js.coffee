@@ -1,4 +1,9 @@
 source = new EventSource('/updates')
 source.addEventListener 'message', (e) ->
-  $("[data-status]").attr("data-status", e.data)
-  console.log e.data
+  data = JSON.parse(e.data)
+
+  if data.event == "status_update"
+    $("[data-status]").attr("data-status", data.status)
+
+  console.log e
+  console.log data

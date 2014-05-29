@@ -13,3 +13,4 @@ gem 'jquery-rails'
 
 gem 'redis'
 gem 'puma'
+gem 'pi_piper'
